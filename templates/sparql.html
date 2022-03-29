@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+	<!-- <h1>{% block title %} Add a New Message {% endblock %}</h1> -->
+
+	<form method="post">
+		<label for="title"><b>Track Title</b> (This field must be specified)</label>
+		<br>
+		<input type="text" name="track_title"
+			   placeholder="symphony 3 &quot;eroica&quot;
+			   value="{{ request.form['track_title'] }}"></input>
+		<br>
+		<label for="artist"><b>Composer Name (This field is recommended to be filled)</b></label>
+		<br>
+		<input type="text" name="composer_name"
+			   placeholder="beethoven"
+			   value="{{ request.form['composer_name'] }}"></input>
+		<br>
+
+
+
+
+		<label for="artist"><b>Performer Name</b></label>
+		<br>
+		<input type="text" name="performer_name"
+			   placeholder="karajan"
+			   value="{{ request.form['performer_name'] }}"></input>
+		<br>
+
+
+
+		<label for="limit"><b>Limit</b> (For the solution modifier of SPARQL, default value for limit set as 50, -1 for unlimited)</label>
+		<br>
+		<input type="text" name="limit"
+			   placeholder="Default value 50, if not set"
+			   value="{{ request.form['limit'] }}"></input>
+		<br>
+
+
+
+		<label><b>Recording Duration:</b></label>
+		<select name="duration_select">
+		{% for key in messages[1]["durations"].keys() %}
+
+		  <option value="{{ key }}">{{ messages[1]["durations"][key] }}</option>
+
+		 {% endfor %}
+		</select>
+		<br>
+
+		<label><b>Sort by Date:</b></label>
+		<select name="sort_date">
+		{% for key in messages[2]["date"].keys() %}
+
+		  <option value="{{ key }}">{{ messages[2]["date"][key] }}</option>
+
+		 {% endfor %}
+		</select>
+		<br>
+
+		<!-- <label for="content">Type the input</label>
+		<br>
+		<textarea id="queryarea" name="content"
+				  placeholder="Message content"
+				  rows="15"
+				  cols="60"
+				  >{{ request.form['content'] }}</textarea>
+		<br> -->
+		<button type="submit">Submit</button>
+	</form>
+
+
+{% endblock %}
+
+

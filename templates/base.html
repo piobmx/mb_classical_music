@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %} {% endblock %} - FlaskApp</title>
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/ionicons.min.css') }}">
+
+
+	<style>
+		body{
+			padding-left: 10em;
+			padding-right: 10em;
+		}
+		.message {
+			padding: 10px;
+			margin: 5px;
+			background-color: #f3f3f3
+		}
+		#queryarea {
+			font-family: Consolas, Lucida Console, monospace;
+
+		}
+		nav a {
+			color: #d64161;
+			font-size: 3em;
+			margin-left: 50px;
+			text-decoration: none;
+		}
+
+	</style>
+</head>
+<body>
+	<nav>
+		<a href="{{ url_for('index') }}">Home</a>
+		<!-- <a href="#">About</a> -->
+		<a href="{{ url_for('create') }}">SPARQL</a>
+		<!-- <a href="{{ url_for('test_results_display') }}"> Test </a> -->
+	</nav>
+	<hr>
+	<div class="content">
+		{% block content %} {% endblock %}
+
+	</div>
+</body>
+</html>

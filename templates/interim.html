@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<p> {{ messages["query"] }}</p>
+	<p>SPARQL Query used for generating results. You can also copy the query in the text box and execute in a GraphDB workbench or other softwares.</p>
+		<textarea id="queryarea" name="content"
+			  placeholder="Query for this results"
+			  rows="15"
+			  cols="60"
+			  >{{ messages["sparql query"] }}</textarea>
+	<br>
+	<form method="post">
+
+	<button type="submit">Go</button>
+	</form>
+{% endblock %}
+

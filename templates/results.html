@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1 style="color: #999">{% block title %} Messages {% endblock %}</h1>
+	{% if messages["exception"] is not none	%}
+	<h2 style="color: red">Exception: {{ messages["exception"] }}</h2>
+	{% else %}
+	{% endif %}
+
+
+
+	<p> {{ messages["query"] }}</p>
+	<!-- {% autoescape false %}
+	{{ messages["sparql query"] |replace("\n", "<br/>")  }}
+	{% endautoescape %} -->
+	<p><b>Raw query used for fetching results:</b></p>
+	<br\>
+
+		<textarea id="queryarea" name="content"
+			  placeholder="Query for this results"
+			  rows="15"
+			  cols="60"
+			  >{{ messages["sparql query"] }}</textarea>
+	<br>
+	<!-- <h3> {{ messages["results"] }} </h3> -->
+{% if messages["time"] is not none	%}
+	<h2 style="color: #332311">Above Query took: {{ messages["time"] }} second(s)</h2>
+	{% else %}
+	{% endif %}
+	<div>
+		<p>All matching recordings: </p>
+		{{ table | safe }}
+	</div>
+{% endblock %}
+
