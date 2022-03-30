@@ -159,7 +159,10 @@ class Querier:
 
 
 	def __str__(self):
-		string = str(self.dict_fields)
+		string = ""
+		for k in self.dict_fields.keys():
+			string += f"{k}: {self.dict_fields[k]}\n"
+
 		return string
 
 
