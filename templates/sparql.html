@@ -3,13 +3,13 @@
 	<!-- <h1>{% block title %} Add a New Message {% endblock %}</h1> -->
 
 	<form method="post">
-		<label for="title"><b>Track Title</b> (This field must be specified)</label>
+		<label for="title">Track Title <b>(This field must be specified)</b></label>
 		<br>
 		<input type="text" name="track_title"
 			   placeholder="symphony 3 &quot;eroica&quot;
 			   value="{{ request.form['track_title'] }}"></input>
 		<br>
-		<label for="artist"><b>Composer Name (This field is recommended to be filled)</b></label>
+		<label for="artist">Composer Name <b>(This field is recommended to be filled)</b></label>
 		<br>
 		<input type="text" name="composer_name"
 			   placeholder="beethoven"
