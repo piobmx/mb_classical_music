@@ -55,8 +55,8 @@ def create():
 		performer_name = request.form['performer_name'].strip()
 		composer_name = request.form['composer_name'].strip() or "beethoven"
 		track_title = request.form['track_title'].strip() or "symphony 3 'eroica'"
-		if performer_name is not '':
-			limit = int(10**10)
+		if performer_name is not '' or len(performer_name) > 0:
+			limit = -1
 		else:
 			limit = request.form['limit'] or 50
 		duration_order = request.form.get('duration_select') or "None"

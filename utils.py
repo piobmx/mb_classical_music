@@ -64,7 +64,10 @@ def complete_track_composer_subquery(prime_key, composer="", limit=50, *keys):
 	composer_filter = COMPOSER_FILTER.format(composer_name = composer.lower())
 	key_filter = FILTER.format(prime_key.lower())
 	lines = TRACK_COMPOSER_SUBQUERY.copy()
-	lines[-2] = lines[-2].format(limit=limit)
+	if limit == -1:
+		lines[-2] = "\n"
+	else:
+		lines[-2] = lines[-2].format(limit=limit)
 	lines.insert(3, composer_filter)
 	lines.insert(6, key_filter)
 	for k in keys:

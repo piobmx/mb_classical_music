@@ -17,14 +17,14 @@
 			   value="{{ request.form['composer_name'] }}"></input>
 		<br>
 
-		<label for="artist">Performer Name<b>(This Field is Optional)</b></label>
+		<label for="artist">Performer Name <b>(This Field is Optional)</b></label>
 		<br>
 		<input type="text" name="performer_name"
 			   placeholder="karajan"
 			   value="{{ request.form['performer_name'] }}"></input>
 		<br>
 
-		<label for="limit">Limit<b>(For the solution modifier of SPARQL, default value for limit set as 50, -1 for unlimited)</b></label>
+		<label for="limit">Limit<b>(For the solution modifier of SPARQL, default value is 50. If the Performer Field is not empty, then the query is not limited)</b></label>
 		<br>
 		<input type="text" name="limit"
 			   placeholder="Default value 50, if not set"
