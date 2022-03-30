@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<h1>This is the Web GUI for BMKG Project</h1>
-	<a href="{{ url_for('create') }}">go to query the knowledge graph at local SPARQL endpoint</a>
+	<h1>BMKG Project</h1>
+	<h3><a href="{{ url_for('create') }}">Go to query the knowledge graph at local SPARQL endpoint</a></h3>
+
+
+	<h3>Report for this Project (Please use this for evaluation)</h3>
+<div class="pdf-container">
+<object data="{{ url_for('static', filename='docs/a.pdf')}}" type="application/pdf" style="min-height:100vh;width:75%"></object>
+</div>
+
 {% endblock %}
 
