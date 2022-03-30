@@ -7,28 +7,29 @@
 
 		<br>
 		<input type="text" name="track_title"
-			   placeholder="symphony 3 &quot;eroica&quot;
+			   placeholder="e.g. moonlight sonata, symphony 3 &quot;eroica&quot;"
 			   value="{{ request.form['track_title'] }}"></input>
 		<br>
 		<label for="artist">Composer Name <b>(This field is recommended to be filled)</b></label>
 		<br>
 		<input type="text" name="composer_name"
-			   placeholder="beethoven"
+			   placeholder="e.g. chopin, beethoven"
 			   value="{{ request.form['composer_name'] }}"></input>
 		<br>
 
 		<label for="artist">Performer Name <b>(This Field is Optional)</b></label>
 		<br>
 		<input type="text" name="performer_name"
-			   placeholder="karajan"
+			   placeholder="e.g. berliner philharmoniker, karajan"
 			   value="{{ request.form['performer_name'] }}"></input>
 		<br>
 
-		<label for="limit">Limit<b> (For the solution modifier of SPARQL, default value is 50. If the Performer Field is not empty, then the query is not limited)</b></label>
+		<label for="limit">Limit<b> (For the solution modifier of SPARQL, default value is 50. Limit will be ignored if the Performer Field is not empty.)</b></label>
 		<br>
 		<input type="text" name="limit"
-			   placeholder="Default value 50, if not set"
+			   placeholder="Default: 50"
 			   value="{{ request.form['limit'] }}"></input>
+		<br>
 		<br>
 
 

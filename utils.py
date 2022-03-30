@@ -10,7 +10,6 @@ TRACK_COMPOSER_SUBQUERY = [
 			"?composer rdf:type mo:MusicComposer;",
 			"<http://open.vocab.org/terms/sortLabel> ?composerLabel.",
 # 		    FILTER CONTAINS(lcase(?composerLabel), "schubert"^^xsd:string)
-
 			"?composer foaf:made ?track.",
 			"?track dc:title ?trackTitle",
 #             FILTER CONTAINS(LCASE(?trackTitle), "sonata")
