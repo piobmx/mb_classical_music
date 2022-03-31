@@ -87,7 +87,7 @@ def query_results_to_html(results):
 		'pub_of': "Publication",
 		'performer': "Performer URL",
 		# 'pL': "Performer",
-		# 'performerLabel': "Performer",
+		'performerLabel': "Performer",
 		'records': "Record",
 		'release': "Release URL",
 		'releaseTitle': "Release Title",
