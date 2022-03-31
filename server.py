@@ -132,16 +132,6 @@ def results():
 	return render_template("results.html", messages=msg, table=table)
 
 
-@app.route('/resultse/')
-def test_results_display():
-	bdata = b'artist,name,works\r\nhttp://musicbrainz.org/artist/81269a28-c616-4e87-8942-a6f8e59b68e4#_,Vladimir Horowitz,http://musicbrainz.org/recording/e878fcb5-c6ac-42ae-92f4-8ac1f34fd075#_\r\nhttp://musicbrainz.org/artist/81269a28-c616-4e87-8942-a6f8e59b68e4#_,Vladimir Horowitz,http://musicbrainz.org/recording/44328c09-09b8-4ded-8503-f5920b7e417c#_\r\nhttp://musicbrainz.org/artist/81269a28-c616-4e87-8942-a6f8e59b68e4#_,Vladimir Horowitz,http://musicbrainz.org/recording/502ce606-5bf7-4d89-bd1e-1e3003bb8cff#_\r\nhttp://musicbrainz.org/artist/81269a28-c616-4e87-8942-a6f8e59b68e4#_,Vladimir Horowitz,http://musicbrainz.org/recording/ac757866-a7ba-43d7-afe2-1c246f1d507c#_\r\nhttp://musicbrainz.org/artist/81269a28-c616-4e87-8942-a6f8e59b68e4#_,Vladimir Horowitz,http://musicbrainz.org/recording/2d3acca2-f8b7-48f1-a99c-6b6f19f81aee#_\r\nhttp://musicbrainz.org/artist/81269a28-c616-4e87-8942-a6f8e59b68e4#_,Vladimir Horowitz,http://musicbrainz.org/recording/6a254d69-4481-4152-afd3-3fdc4d1ca6b4#_\r\nhttp://musicbrainz.org/artist/81269a28-c616-4e87-8942-a6f8e59b68e4#_,Vladimir Horowitz,http://musicbrainz.org/recording/78de0c24-027b-4bee-920a-a3bb7645c315#_\r\nhttp://musicbrainz.org/artist/81269a28-c616-4e87-8942-a6f8e59b68e4#_,Vladimir Horowitz,http://musicbrainz.org/recording/e90fa851-5010-4e40-8926-0390a0442708#_\r\n'
-	data = StringIO(str(bdata, 'utf-8'))
-	df = pd.read_csv(data, delimiter=",")
-	df.index += 1
-	table = df.to_html(index=True, justify="left")
-	msg = {
-		"query": 1,
-		"sparql query": 1,
-		"results": df,
-	}
-	return render_template("results.html", messages=msg, table=table)
+@app.route('/doc/')
+def show_pdf():
+	return render_template("p.html")
