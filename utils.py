@@ -86,7 +86,7 @@ def query_results_to_html(results):
 		'duration': "Duration (seconds)",
 		'pub_of': "Publication",
 		'performer': "Performer URL",
-		'pL': "Performer",
+		# 'pL': "Performer",
 		# 'performerLabel': "Performer",
 		'records': "Record",
 		'release': "Release URL",
