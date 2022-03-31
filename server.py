@@ -121,10 +121,10 @@ def results():
 		query_results = sparql.queryAndConvert()
 		msg["results"] = query_results,
 		table = query_results_to_html(query_results)
-	except Exception or TypeError:
+	except Exception as e:
 		table = None
 		msg["results"] = None
-		msg["exception"] = Exception
+		msg["exception"] = str(e)
 
 	query_time = time.time() - query_start_time
 	msg["time"] = str(query_time)
