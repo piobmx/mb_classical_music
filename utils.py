@@ -97,7 +97,7 @@ def query_results_to_html(results):
 
 	}, axis=1)  # new method
 	# selected_header = ["Composer", "Track URL", "Track Title", "Duration (seconds)", "Performer", "Release Title", "Date"]
-	selected_header = ["Composer", "Track URL", "Track Title", "Duration (seconds)",  "Performer", "Release Title", "Date"]
+	selected_header = ["Composer", "Track URL", "Track Title", "Duration (seconds)", "Release Title", "Date", "Performer"]
 	# df_new = df.groupby(df['Track URL']).aggregate({
 		# 'Performer': lambda x: ' '.join(set(x))})
 	df.to_csv("ae.csv")
