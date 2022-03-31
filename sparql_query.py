@@ -75,8 +75,8 @@ class Querier:
 		self.parse_keywords()
 		self.query = ""
 		self.query += self.QUERY_PREFIXES
-		self.query += '\n SELECT ?composer ?track ?trackTitle ?duration (GROUP_CONCAT(?performerLabel;SEPARATOR=",") AS ?pL) ?dates ?releaseTitle WHERE { \n'
-		self.query += "\n SELECT * WHERE { \n"
+		self.query += '\n SELECT ?composer ?track ?trackTitle ?duration ?dates ?releaseTitle (GROUP_CONCAT(?performerLabel;SEPARATOR=",") AS ?pL)  WHERE { \n'
+		# self.query += "\n SELECT * WHERE { \n"
 
 		sub_q = complete_track_composer_subquery(self.dict_fields["track"], self.dict_fields["composer"], self.dict_fields["limit"], *self.dict_fields["keywords"])
 
