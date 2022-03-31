@@ -132,6 +132,6 @@ def results():
 	return render_template("results.html", messages=msg, table=table)
 
 
-@app.route('/doc/')
+@app.route('/doc/', methods=('GET', 'POST'))
 def show_pdf():
 	return render_template("p.html")
