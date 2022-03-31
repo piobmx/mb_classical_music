@@ -83,11 +83,8 @@ class Querier:
 
 
 		self.query += sub_q
-		performer = self.dict_fields["performer"].lower().split(" ")
-		for p in performer:
-			self.query += self.PERFORMER_FILTER.format(performer=p)
 
-		# self.query += self.PERFORMER_FILTER.format(performer=self.dict_fields["performer"].lower())
+		self.query += self.PERFORMER_FILTER.format(performer=self.dict_fields["performer"].lower())
 		self.query += self.DATES_FILTER
 
 		self.query += "}\n"
