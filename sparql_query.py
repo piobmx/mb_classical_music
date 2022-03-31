@@ -95,7 +95,7 @@ class Querier:
 		# else:
 		# 	order += ""
 		order = self.construct_order()
-		self.query += "Group by ?composer ?track ?trackTitle ?duration ?dates ?releaseTitle\n"
+		self.query += "Group by ?composerLabel ?track ?trackTitle ?duration ?dates ?releaseTitle\n"
 		self.query += order
 
 
