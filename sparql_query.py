@@ -24,6 +24,8 @@ class Querier:
 	FILTER CONTAINS(LCASE(?performerLabel), "{performer}").
 	"""
 
+	PERFORMER_LABEL_FILTER = 'FILTER CONTAINS(LCASE(?performerLabel), "{performer}").\n'
+
 	DATES_FILTER = """
 	OPTIONAL {
 		?records mo:track ?track.
@@ -83,8 +85,11 @@ class Querier:
 
 
 		self.query += sub_q
+		p = self.dict_fields["performer"].lower().split(" ")
 
 		self.query += self.PERFORMER_FILTER.format(performer=self.dict_fields["performer"].lower())
+
+
 		self.query += self.DATES_FILTER
 
 		self.query += "}\n"
